@@ -23,8 +23,8 @@ void updateSymbolVal(char symbol, int val);
 /* descriptions of expected inputs     corresponding actions (in C) */
 
 line    : assignment ';'		{;}
-		| exit_command ';'		{exit(EXIT_SUCCESS);}
-		| print exp ';'			{printf("Printing %d\n", $2);}
+		| exit_command ';'	{exit(EXIT_SUCCESS);}
+		| print exp ';'		{printf("Printing %d\n", $2);}
 		| line assignment ';'	{;}
 		| line print exp ';'	{printf("Printing %d\n", $3);}
 		| line exit_command ';'	{exit(EXIT_SUCCESS);}
